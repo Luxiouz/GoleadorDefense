@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Penales PerlaSOFT</title>
+	<script type="text/javascript" src="src/phaser.js"></script>
+    <script type="text/javascript"  src="src/boot.js"></script>
+    <script type="text/javascript"  src="src/preload.js"></script>
+    <script type="text/javascript"  src="src/gametitle.js"></script>
+    <script type="text/javascript"  src="src/thegame.js"></script>
+    <script type="text/javascript"  src="src/gameover.js"></script>
+    
+ 	<style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+	<script type="text/javascript">
+        (function() {
+                var time = 0;
+                var score = 0;
+                var attempts = 0;
+                var lastTime = 0;
+                var team = "none";
+                var isPause = false;
+                var State = "Awake";
+                var firstCharge = true;
+                var timeInFinish = 0;
+                
+                var game = new Phaser.Game(810, 651, Phaser.CANVAS, "game");
+				game.state.add("Boot",boot);
+				game.state.add("Preload",preload);
+				game.state.add("GameTitle",gameTitle);
+				game.state.add("TheGame",theGame);
+				game.state.add("GameOver",gameOver);
+				game.state.start("Boot");
+                
+			})(); 
+        
+       /*var boot = function(game){
+	    console.log("%cStarting Goleador Defense Perlasoft!", "color:white; background:red");
+        };
+  
+       boot.prototype = {
+           preload: function(){
+                this.game.load.image("loading","preload.png"); 
+                this.game.load.image("loading","assets/BG.png"); 
+           },
+           create: function(){
+            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            this.scale.pageAlignHorizontally = true;
+            this.scale.setScreenSize();
+            this.game.state.start("Preload");
+           }
+       }*/
+	</script>
+</body>
+</html>
